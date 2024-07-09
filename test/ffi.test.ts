@@ -1,8 +1,8 @@
 import { assertEquals, assertIsError, unreachable } from 'assert'
 
-import { FFIResulTypeIsNotForYaksokError } from '../error/ffi.ts'
-import { yaksok } from '../index.ts'
-import { NumberValue, StringValue } from '../node/index.ts'
+import { FFIResulTypeIsNotForYaksokError } from '../src/error/ffi'
+import { yaksok } from '../src/index'
+import { NumberValue, StringValue } from '../src/node/index'
 
 Deno.test('FFI Calling', () => {
     const code = `

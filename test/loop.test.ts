@@ -7,12 +7,12 @@ import {
     Print,
     Loop,
     EOL,
-} from '../node/index.ts'
-import { BreakNotInLoopError } from '../error/index.ts'
-import { tokenize } from '../prepare/tokenize/index.ts'
-import { CannotParseError } from '../error/prepare.ts'
-import { parse } from '../prepare/parse/index.ts'
-import { yaksok } from '../index.ts'
+} from '../src/node/index'
+import { BreakNotInLoopError } from '../src/error/index'
+import { tokenize } from '../src/prepare/tokenize/index'
+import { CannotParseError } from '../src/error/prepare'
+import { parse } from '../src/prepare/parse/index'
+import { yaksok } from '../src/index'
 
 Deno.test('Parse Loop', () => {
     const code = `

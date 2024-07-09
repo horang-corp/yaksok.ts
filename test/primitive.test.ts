@@ -1,7 +1,7 @@
 import { assertEquals } from 'assert'
 
-import { BooleanValue } from '../node/index.ts'
-import { yaksok } from '../index.ts'
+import { BooleanValue } from '../src/node/index'
+import { yaksok } from '../src/index'
 
 Deno.test('Number to print', () => {
     let printed = ''

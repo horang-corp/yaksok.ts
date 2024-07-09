@@ -1,7 +1,7 @@
 import { assertIsError, unreachable } from 'assert'
 
-import { CannotParseError } from '../error/index.ts'
-import { yaksok } from '../index.ts'
+import { CannotParseError } from '../src/error/index'
+import { yaksok } from '../src/index'
 
 Deno.test('Broken Blocks', () => {
     const code = `

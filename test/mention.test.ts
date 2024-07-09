@@ -1,14 +1,14 @@
 import { assertEquals, unreachable } from 'assert'
 
-import { tokenize } from '../prepare/tokenize/index.ts'
-import { Expression, Keyword } from '../node/base.ts'
-import { parse } from '../prepare/parse/index.ts'
-import { Mention } from '../node/index.ts'
-import { EOL } from '../node/misc.ts'
-import { yaksok } from '../index.ts'
-import { Formula } from '../node/calculation.ts'
-import { MentionScope } from '../node/mention.ts'
-import { IfStatement } from '../node/IfStatement.ts'
+import { tokenize } from '../src/prepare/tokenize/index'
+import { Expression, Keyword } from '../src/node/base'
+import { parse } from '../src/prepare/parse/index'
+import { Mention } from '../src/node/index'
+import { EOL } from '../src/node/misc'
+import { yaksok } from '../src/index'
+import { Formula } from '../src/node/calculation'
+import { MentionScope } from '../src/node/mention'
+import { IfStatement } from '../src/node/IfStatement'
 
 Deno.test('Parse Mentioning', async (context) => {
     const code = '@아두이노 모델명 보여주기'

@@ -1,7 +1,7 @@
 import { assertEquals, assertIsError, unreachable } from 'assert'
 
-import { UnexpectedTokenError } from '../error/index.ts'
-import { yaksok } from '../index.ts'
+import { UnexpectedTokenError } from '../src/error/index'
+import { yaksok } from '../src/index'
 
 Deno.test('Function Josa Variants', () => {
     const code = `

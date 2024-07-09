@@ -1,6 +1,6 @@
 import { assertEquals } from 'assert'
-import { Keyword, Variable, EOL, Expression } from '../node/index.ts'
-import { lexFunctionArgument } from '../prepare/tokenize/lexFunctionArgument.ts'
+import { Keyword, Variable, EOL, Expression } from '../src/node/index'
+import { lexFunctionArgument } from '../src/prepare/tokenize/lexFunctionArgument'
 
 Deno.test('Preprocess tokens', () => {
     const tokens = [

@@ -7,15 +7,15 @@ import {
     Variable,
     Block,
     EOL,
-} from '../node/index.ts'
-import { CannotUseReservedWordForVariableNameError } from '../error/index.ts'
-import { NotDefinedVariableError } from '../error/variable.ts'
-import { tokenize } from '../prepare/tokenize/index.ts'
-import { parse } from '../prepare/parse/index.ts'
-import { Formula } from '../node/calculation.ts'
-import { run } from '../runtime/run.ts'
-import { Print } from '../node/misc.ts'
-import { yaksok } from '../index.ts'
+} from '../src/node/index'
+import { CannotUseReservedWordForVariableNameError } from '../src/error/index'
+import { NotDefinedVariableError } from '../src/error/variable'
+import { tokenize } from '../src/prepare/tokenize/index'
+import { parse } from '../src/prepare/parse/index'
+import { Formula } from '../src/node/calculation'
+import { run } from '../src/runtime/run'
+import { Print } from '../src/node/misc'
+import { yaksok } from '../src/index'
 
 Deno.test('Parse Variable', () => {
     const { ast } = parse(tokenize('이름: 1', true))

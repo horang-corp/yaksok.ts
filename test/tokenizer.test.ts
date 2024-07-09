@@ -1,5 +1,5 @@
 import { assertEquals, assertIsError, unreachable } from 'assert'
-import { tokenize } from '../prepare/tokenize/index.ts'
+import { tokenize } from '../src/prepare/tokenize/index'
 import {
     Expression,
     Keyword,
@@ -7,17 +7,17 @@ import {
     Operator,
     StringValue,
     Variable,
-} from '../node/index.ts'
-import { EOL, Indent } from '../node/misc.ts'
+} from '../src/node/index'
+import { EOL, Indent } from '../src/node/misc'
 import {
     IndentIsNotMultipleOf4Error,
     UnexpectedCharError,
     UnexpectedEndOfCodeError,
-} from '../error/index.ts'
+} from '../src/error/index'
 import {
     isValidFirstCharForKeyword,
     isValidCharForKeyword,
-} from '../prepare/tokenize/isValidCharForKeyword.ts'
+} from '../src/prepare/tokenize/isValidCharForKeyword'
 
 Deno.test('Determine validity as a keyword char of "a"', () => {
     assertEquals(
@@ -360,7 +360,7 @@ Deno.test('Tokenize Uncomplete String', () => {
     }
 })
 
-// import { yaksok } from '../index.ts'
+// import { yaksok } from '../index'
 
 // const FIBONACCI = `
 // 약속 "피보나치" 수

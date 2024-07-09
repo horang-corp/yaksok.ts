@@ -1,0 +1,52 @@
+import { UnexpectedTokenError } from '@/error'
+import { Node, StringValue, Variable } from '@/node'
+import { createFunctionDeclareRule } from './declareRule'
+import { FunctionHeaderNode, functionRuleByType } from './functionRuleByType'
+import { getVariants } from './getVariants'
+import { createFunctionInvokeRule } from './invokeRule'
+
+export function createFunctionRules(
+    subtokens: Node[],
+    type: keyof typeof functionRuleByType,
+) {
+    assertValidFunctionHeader(subtokens)
+
+    const name = getFunctionNameFromHeader(subtokens)
+    const variants = [...getVariants(subtokens)]
+
+    const declareRule = createFunctionDeclareRule(name, subtokens, {
+        type,
+    })
+    const invokeRules = variants.map((v) => createFunctionInvokeRule(name, v))
+
+    return [declareRule, ...invokeRules]
+}
+
+function assertValidFunctionHeader(
+    subtokens: Node[],
+): asserts subtokens is FunctionHeaderNode[] {
+    for (const token of subtokens) {
+        if (token instanceof Variable) continue
+        if (token instanceof StringValue) continue
+
+        throw new UnexpectedTokenError({
+            position: subtokens[0].position,
+            resource: {
+                node: token,
+                parts: '약속 만들기',
+            },
+        })
+    }
+}
+
+function getFunctionNameFromHeader(subtokens: FunctionHeaderNode[]) {
+    return subtokens.map(functionHeaderToNameMap).join(' ')
+}
+
+function functionHeaderToNameMap(token: FunctionHeaderNode) {
+    if (token instanceof Variable) {
+        return token.name
+    } else {
+        return token.value
+    }
+}

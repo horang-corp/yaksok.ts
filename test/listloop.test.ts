@@ -1,7 +1,7 @@
 import { assertEquals, assertIsError, unreachable } from 'assert'
-import { yaksok } from '../index.ts'
-import { NotEnumerableValueForListLoopError } from '../error/index.ts'
-import { CannotParseError } from '../error/prepare.ts'
+import { yaksok } from '../src/index'
+import { NotEnumerableValueForListLoopError } from '../src/error/index'
+import { CannotParseError } from '../src/error/prepare'
 
 Deno.test('Loop for list', () => {
     let printed = ''

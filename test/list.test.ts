@@ -9,9 +9,9 @@ import {
     RangeStartMustBeLessThanEndError,
     RangeStartMustBeNumberError,
     TargetIsNotIndexedValueError,
-} from '../error/index.ts'
-import { yaksok } from '../index.ts'
-import { Formula } from '../node/calculation.ts'
+} from '../src/error/index'
+import { yaksok } from '../src/index'
+import { Formula } from '../src/node/calculation'
 import {
     Block,
     EOL,
@@ -25,11 +25,11 @@ import {
     Sequence,
     SetToIndex,
     SetVariable,
-} from '../node/index.ts'
-import { parse } from '../prepare/parse/index.ts'
-import { tokenize } from '../prepare/tokenize/index.ts'
-import { CallFrame } from '../runtime/callFrame.ts'
-import { Scope } from '../runtime/scope.ts'
+} from '../src/node/index'
+import { parse } from '../src/prepare/parse/index'
+import { tokenize } from '../src/prepare/tokenize/index'
+import { CallFrame } from '../src/runtime/callFrame'
+import { Scope } from '../src/runtime/scope'
 
 Deno.test('Parse list', async (context) => {
     const code = `

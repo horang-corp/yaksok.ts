@@ -3,9 +3,9 @@ import { assert, assertEquals, assertIsError, unreachable } from 'assert'
 import {
     CannotReturnOutsideFunctionError,
     NotEvaluableParameterError,
-} from '../error/index.ts'
-import { CannotParseError } from '../error/prepare.ts'
-import { yaksok } from '../index.ts'
+} from '../src/error/index'
+import { CannotParseError } from '../src/error/prepare'
+import { yaksok } from '../src/index'
 import {
     Block,
     DeclareFunction,
@@ -14,9 +14,9 @@ import {
     Keyword,
     NumberValue,
     SetVariable,
-} from '../node/index.ts'
-import { run } from '../runtime/run.ts'
-import { Scope } from '../runtime/scope.ts'
+} from '../src/node/index'
+import { run } from '../src/runtime/run'
+import { Scope } from '../src/runtime/scope'
 
 Deno.test('Function that returns value', () => {
     const code = `

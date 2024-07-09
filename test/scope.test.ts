@@ -9,17 +9,17 @@ import {
 import {
     NotDefinedFunctionError,
     NotDefinedVariableError,
-} from '../error/index.ts'
+} from '../src/error/index'
 import {
     Block,
     DeclareFunction,
     Evaluable,
     FunctionInvoke,
     NumberValue,
-} from '../node/index.ts'
-import { SetVariable } from '../node/variable.ts'
-import { CallFrame } from '../runtime/callFrame.ts'
-import { Scope } from '../runtime/scope.ts'
+} from '../src/node/index'
+import { SetVariable } from '../src/node/variable'
+import { CallFrame } from '../src/runtime/callFrame'
+import { Scope } from '../src/runtime/scope'
 
 Deno.test('Create Scope', () => {
     const scope = new Scope()

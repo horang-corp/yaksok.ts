@@ -1,3 +1,9 @@
 yaksok.js
 runtest.ts
 .vscode
+
+# deps
+node_modules
+
+# build
+dist

@@ -1,8 +1,8 @@
 import { assertEquals, assertIsError, unreachable } from 'assert'
 
-import { Evaluable, Executable, NumberValue, Operator } from '../node/index.ts'
-import { Scope } from '../runtime/scope.ts'
-import { CallFrame } from '../runtime/callFrame.ts'
+import { Evaluable, Executable, NumberValue, Operator } from '../src/node/index'
+import { Scope } from '../src/runtime/scope'
+import { CallFrame } from '../src/runtime/callFrame'
 
 Deno.test('Basement Nodes are not executable', async (context) => {
     await context.step('Executable', () => {

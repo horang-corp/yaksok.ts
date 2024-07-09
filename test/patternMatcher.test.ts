@@ -6,10 +6,10 @@ import {
     Formula,
     PlusOperator,
     SetVariable,
-} from '../node/index.ts'
-import { StringValue } from '../node/primitive.ts'
-import { parse } from '../prepare/parse/index.ts'
-import { tokenize } from '../prepare/tokenize/index.ts'
+} from '../src/node/index'
+import { StringValue } from '../src/node/primitive'
+import { parse } from '../src/prepare/parse/index'
+import { tokenize } from '../src/prepare/tokenize/index'
 
 Deno.test('Matching case: Wrapping class inherits from child class', () => {
     const code = `

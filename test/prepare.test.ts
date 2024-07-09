@@ -1,6 +1,6 @@
 import { assertIsError, unreachable } from 'assert'
-import { yaksok } from '../index.ts'
-import { FileForRunNotExistError } from '../error/prepare.ts'
+import { yaksok } from '../src/index'
+import { FileForRunNotExistError } from '../src/error/prepare'
 
 Deno.test('Entry Point Not Exist', () => {
     try {

@@ -1,9 +1,9 @@
 import { assertEquals } from 'assert'
 
-import { tokenize } from '../prepare/tokenize/index.ts'
-import { SetVariable } from '../node/variable.ts'
-import { parse } from '../prepare/parse/index.ts'
-import { yaksok } from '../index.ts'
+import { tokenize } from '../src/prepare/tokenize/index'
+import { SetVariable } from '../src/node/variable'
+import { parse } from '../src/prepare/parse/index'
+import { yaksok } from '../src/index'
 
 function createRandomValue(depth = 0): number | (string | number)[] {
     if (depth > 3 || Math.random() < 0.5) {

@@ -1,7 +1,7 @@
 import { assertEquals } from 'assert'
 
-import { NumberValue } from '../node/primitive.ts'
-import { yaksok } from '../index.ts'
+import { NumberValue } from '../src/node/primitive'
+import { yaksok } from '../src/index'
 
 Deno.test('Operation with parenthesis', () => {
     const code = `

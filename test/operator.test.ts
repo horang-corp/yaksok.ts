@@ -3,13 +3,13 @@ import { assertEquals, assertIsError, unreachable } from 'assert'
 import {
     InvalidTypeForCompareError,
     UnknownOperatorPrecedenceError,
-} from '../error/calculation.ts'
+} from '../src/error/calculation'
 import {
     InvalidNumberOfOperandsError,
     InvalidTypeForOperatorError,
-} from '../error/index.ts'
-import { yaksok } from '../index.ts'
-import { Operator } from '../node/base.ts'
+} from '../src/error/index'
+import { yaksok } from '../src/index'
+import { Operator } from '../src/node/base'
 import {
     AndOperator,
     Block,
@@ -30,11 +30,11 @@ import {
     PlusOperator,
     SetVariable,
     StringValue,
-} from '../node/index.ts'
-import { parse } from '../prepare/parse/index.ts'
-import { tokenize } from '../prepare/tokenize/index.ts'
-import { CallFrame } from '../runtime/callFrame.ts'
-import { Scope } from '../runtime/scope.ts'
+} from '../src/node/index'
+import { parse } from '../src/prepare/parse/index'
+import { tokenize } from '../src/prepare/tokenize/index'
+import { CallFrame } from '../src/runtime/callFrame'
+import { Scope } from '../src/runtime/scope'
 
 Deno.test('Parse Binary Operation', () => {
     const code = `1 + 1`
