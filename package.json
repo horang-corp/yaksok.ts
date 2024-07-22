@@ -1,10 +1,16 @@
 {
   "name": "@horang-corp/yaksok.ts",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Zero dependency yaksok interpreter written in TypeScript",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
   "type": "module",
   "scripts": {
     "build": "tsc"

@@ -155,3 +155,15 @@ export function yaksok(
     yaksok.run()
     return yaksok
 }
+
+export default {
+    Yaksok,
+    yaksok,
+    CodeRunner,
+};
+
+export * from './error';
+export * from './node';
+export * from './prepare/parse';
+export * from './prepare/tokenize';
+export * from './runtime';
