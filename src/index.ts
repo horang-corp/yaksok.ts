@@ -41,10 +41,24 @@ export class CodeRunner {
 
         console.log(token)
 
-        const parseResult = parse(tokenize(code), this.runtime)
+        try {
+            const parseResult = parse(tokenize(code), this.runtime)
 
-        this.ast = parseResult.ast
-        this.exports = parseResult.dynamicRules
+            this.ast = parseResult.ast
+            this.exports = parseResult.dynamicRules
+        } catch (error) {
+            if (error instanceof YaksokError) {
+                this.runtime.stderr(
+                    printError({
+                        code: this.code,
+                        runtime: this,
+                        error,
+                    }),
+                )
+            }
+
+            throw error
+        }
     }
 
     run() {
@@ -131,21 +145,8 @@ export class Yaksok implements YaksokConfig {
     }
 
     run(fileName = this.entryPoint) {
-        try {
-            const runner = this.getRunner(fileName)
-            return runner.run()
-        } catch (error) {
-            if (error instanceof YaksokError) {
-                this.stderr(
-                    printError({
-                        code: this.files[fileName],
-                        error,
-                    }),
-                )
-            }
-
-            throw error
-        }
+        const runner = this.getRunner(fileName)
+        return runner.run()
     }
 
     runOnce(fileName = this.entryPoint) {
