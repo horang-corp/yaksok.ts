@@ -1,7 +1,7 @@
 import { assertEquals, assertIsError, unreachable } from 'assert'
 
-import { UnexpectedTokenError } from '../src/error/index'
-import { yaksok } from '../src/index'
+import { FunctionCannotHaveArgumentsInARowError } from '../error/index.ts'
+import { yaksok } from '../index.ts'
 
 Deno.test('Function Josa Variants', () => {
     const code = `
@@ -44,6 +44,6 @@ Deno.test('Broken function declaration', () => {
         yaksok(code)
         unreachable()
     } catch (e) {
-        assertIsError(e, UnexpectedTokenError)
+        assertIsError(e, FunctionCannotHaveArgumentsInARowError)
     }
 })

@@ -1,6 +1,7 @@
 yaksok.js
 runtest.ts
 .vscode
+cov
 
 # deps
 node_modules

@@ -1,4 +1,5 @@
 {
+  "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
     "target": "es2016",
     "module": "CommonJS",
@@ -17,5 +18,9 @@
     }
   },
   "include": ["src/**/*", "scripts/runtest.ts"],
-  "exclude": ["node_modules", "dist", "scripts"]
+  "exclude": ["node_modules", "dist", "scripts"],
+  "ts-node": {
+    "swc": true,
+    "require": ["tsconfig-paths/register"],
+  }
 }

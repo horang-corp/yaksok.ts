@@ -13,16 +13,24 @@
 
 약속 프로그래밍 언어는 교육적으로 훌륭한 언어입니다. 다양한 환경에서 편리하게 약속을 실행할 수 있도록 타입스크립트로 새 런타임을 작성하였습니다.
 
-기준 개발 환경은 Deno(1.38.4)입니다.
+기준 개발 환경은 Node.js(20.16.0)입니다.
 
 ## 아직 Unstable합니다!
 
 실행되지 않는 코드가 있다면 이슈에 남겨주세요.
 
+## 설치하기
+
+**@horang-corp 네임스페이스에 대해 Github Package 등록이 되어있어야 설치가 가능합니다. (권한 필요)**
+
+```bash
+npm i @horang-corp/yaksok.ts
+```
+
 ## 테스트해보기
 
 ```typescript
-import { yaksok } from 'https://deno.land/x/yaksok@beta-13/index.ts'
+import { yaksok } from '@horang-corp/yaksok.ts'
 
 yaksok({
     main: `

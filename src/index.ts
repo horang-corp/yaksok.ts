@@ -37,6 +37,10 @@ export class CodeRunner {
             runtime: this.runtime,
         })
 
+        const token = tokenize(code)
+
+        console.log(token)
+
         const parseResult = parse(tokenize(code), this.runtime)
 
         this.ast = parseResult.ast
@@ -127,8 +131,21 @@ export class Yaksok implements YaksokConfig {
     }
 
     run(fileName = this.entryPoint) {
-        const runner = this.getRunner(fileName)
-        return runner.run()
+        try {
+            const runner = this.getRunner(fileName)
+            return runner.run()
+        } catch (error) {
+            if (error instanceof YaksokError) {
+                this.stderr(
+                    printError({
+                        code: this.files[fileName],
+                        error,
+                    }),
+                )
+            }
+
+            throw error
+        }
     }
 
     runOnce(fileName = this.entryPoint) {
