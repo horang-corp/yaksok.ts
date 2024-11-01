@@ -1,5 +1,6 @@
 {
     "imports": {
+        "@deno/dnt": "jsr:@deno/dnt@^0.41.3",
         "assert": "https://deno.land/std@0.208.0/assert/mod.ts"
     },
     "tasks": {

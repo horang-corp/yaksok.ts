@@ -67,3 +67,14 @@ yaksok({
 ```
 
 Made by Rycont, with ❤️, in 사이버지식정보방
+
+## NPM으로 배포하기
+
+`@deno/dnt`를 활용하여 Deno 프로젝트를 npm에 직접 배포할 수 있습니다.
+
+```bash
+deno run -A build.npm.ts <version>
+
+cd npm
+pnpm publish --no-git-checks --access public # 의존성 해결을 위해 pnpm을 사용합니다.
+```
